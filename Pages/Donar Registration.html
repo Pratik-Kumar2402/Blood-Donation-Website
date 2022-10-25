@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donar Registration</title>
+<style>
+.button{
+  border:none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ 
+.button1{ background-color:#008CBA;}
+.button2{ background-color:#4CAF50;}
+
+
+</style>
+<script>
+function validate()
+{ 
+if(document.getElementById("fname").value=="")
+{
+   alert("please provide your first name!");
+   document.getElementById("fname").focus();
+   return false;
+}
+if(document.getElementById("lname").value=="")
+{
+   alert("please provide your last name!");
+   document.getElementById("lname").focus();
+   return false;
+}
+if(document.getElementById("father name").value=="")
+{
+   alert("please provide your father name!");
+   document.getElementById("father name").focus();
+   return false;
+}
+ 
+ if(document.getElementById("mother name").value=="") 
+{
+   alert("please provide your mother name!");
+   document.getElementById("mother name").focus();
+   return false;
+}
+if(document.getElementById("mobile").value=="")
+{
+   alert("please provide your mobile number!");
+   document.getElementById("mobile").focus();
+   return false;
+}
+if(isNaN(document.getElementById("mobile").value))
+{
+  alert("Entered mobile number is not valid!");
+  document.getElementById("mobile").focus();
+  return false;
+}
+if(document.getElementById("mobile").value.length<10)
+{
+  alert("please provide a valid mobile number!");
+  document.getElementById("mobile").focus();
+  return false;
+}
+if(document.getElementById("email").value=="")
+{
+  alert("please provide your email!");
+  document.getElementById("email").focus();
+  return false;
+}
+var emailID = document.getElementById("email").value;
+ atpos = emailID.indexOf("@");
+ dotpos = emailID.lastIndexOf(".");
+if(document.getElementById("email").value == "" || atpos<1 || (dotpos - atpos<2))
+{
+  alert("please enter correct email ID");
+   document.getElementById("email").focus();
+   return false;
+}
+if(document.getElementById("gender").value=="select")
+{
+  alert("please select your gender!");
+  return false;
+}
+if(document.getElementById("marital").value=="")
+{
+  alert("please provide your marital status");
+  document.getElementById("marital").focus();
+  return false;
+}
+if(document.getElementById("dob").value=="")
+{
+  alert("please provide your date of birth!");
+  return false;
+}
+if(document.getElementById("username").value=="")
+{
+  alert("please provide a Username!");
+  document.getElementById("username").focus();
+  return false;
+}
+if(document.getElementById("password").value=="")
+{
+  alert("please provide a password!");
+  document.getElementById("password").focus();
+  return false;
+}
+if(document.getElementById("password").value.length<8)
+{
+  alert("password must contain atleast 8 digits!");
+  document.getElementById("password").focus();
+  return false;
+}
+if(document.getElementById("confirm").value=="")
+{
+  alert("please enter confirm password!");
+  document.getElementById("confirm").focus();
+  return false;
+}
+if(document.getElementById("confirm").value.length<8)
+{
+  alert("confirm password must contain atleast 8 digits!");
+  document.getElementById("confirm").focus();
+  return false;
+}
+if(document.getElementById("password").value.length>=8 && document.getElementById("confirm").value.length>=8)
+{
+  if(document.getElementById("password").value != document.getElementById("confirm").value)
+{
+  alert("confirm password is invalid!");
+  document.getElementById("confirm").focus();
+  return false;
+}
+}
+if(document.getElementById("blood group").value=="select")
+{
+  alert("please give your blood group!");
+  return false;
+}
+if(document.getElementById("state").value=="select")
+{
+  alert("please select your state!")
+  return false;
+}
+if(document.getElementById("donated").value=="")
+{
+  alert("Enter your date of last donation!");
+  return false;
+}
+if(document.getElementById("blood bank").value=="")
+{
+  alert("please select the blood bank!");
+  return false;
+}
+
+ return (true);
+}
+</script>
+
+</head>
+<body>
+<a href="https://en.wikipedia.org/wiki/Blood_donation" target="_blank"><image align="center" src="../images/2.jpg" alt="Logo" height="200" width="1290"></a>
+<center><u style="color:red"><h1 style="font-size: 80px; color:red">Donar Registration
+</center></u>
+
+<form method="post" name="myform" onsubmit="return(validate());">
+
+<a href="https://en.wikipedia.org/wiki/Blood_donation_in_India" target="_blanK">
+<image align="left" src="../images/1.png" alt="Logo" height="684" width="200"></a>
+<a href="https://en.wikipedia.org/wiki/Blood_donation_in_India" target="_blanK">
+<image align="right" src="../images/1.png" alt="Logo" height="684" width="200"></a>
+
+<fieldset style="background-color:#EEC6C9">
+<center>
+<legend style="font-size:40px">Registration</legend><br><br><br>
+<hr><hr>
+   <label for="first name">First Name: </label>
+     <input type="text" id="fname" name="first name" placeholder="first name">&nbsp;&nbsp;&nbsp;
+   <label for="last name">   Last Name</label>
+     <input type="text" id="lname" name="last name" placeholder="last name"><br><br>
+   <label for="father name">Father's Name:</label>
+     <input type="text" id="father name" name="father name">&nbsp;&nbsp;&nbsp;
+   <label for="mother name">Mother's Name:</label>
+     <input type="text" id="mother name" name="mother name"><br><br>
+   <label for="mobile">Mobile:</label>
+     <input type="tel" id="mobile" name="mobile">&nbsp;&nbsp;&nbsp;
+   <label for="email">Email: </label>
+     <input type="email" id="email" name="email"><br><br>
+   <label for="gender">Gender: </label>
+     <select id="gender">
+        <option value="select">select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="others">Others</option>
+     </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label for="marital">Marital status: </label>
+     <input type="text" id="marital" name="Marital"><br><br>
+   <label for="dob">DOB:</label>
+     <input type="date" id="dob" name="dob" value="DOB"><br><br>
+   <label for="username">Username: </label>
+     <input type="text" id="username" name="username"><br><br>
+   <label for="password">Password: </label>
+     <input type="password" id="password" name="password"><br><br>
+   <label for="confirm">Confirm Password: </label>
+     <input type="password" id="confirm" name="confirm"><br><br>
+   <label for="bloodgroup">select your blood group: </label>
+     <select id="blood group">
+        <option value="select">select</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+     </select><br><br>
+   <label for="state">State: </label>
+     <select id="state">
+        <option value="select">select</option>
+        <option value="state">Andhra Pradesh</option>
+        <option value="state">Arunachal Pradesh</option>
+        <option value="state">Assam</option>
+        <option value="state">Bihar</option>
+        <option value="state">Chhattisgarh</option>
+        <option value="state">Goa</option>
+        <option value="state">Gujrat</option>
+        <option value="state">Haryana</option>
+        <option value="state">Himachal Pradesh</option>
+        <option value="state">Jharkhand</option>
+        <option value="state">Karnataka</option>
+        <option value="state">Kerala</option>
+        <option value="state">Madhya Pradesh</option>
+        <option value="state">Maharashtra</option>
+        <option value="state">Manipur</option>
+        <option value="state">Meghalaya</option>
+        <option value="state">Mizoram</option>
+        <option value="state">Nagaland</option>
+        <option value="state">Odisha</option>
+        <option value="state">Punjab</option>
+        <option value="state">Rajasthan</option>
+        <option value="state">Sikkim</option>
+        <option value="state">Tamil Nadu</option>
+        <option value="state">Telangana</option>
+        <option value="state">Tripura</option>
+        <option value="state">Uttarakhand</option>
+        <option value="state">Uttar Pradesh</option>
+        <option value="state">West Bengal</option>
+</select><br><br>
+  <label for="donated">Last Donate Date:</label>
+    <input type="date" id="donated" name="donated"><br><br>
+<label for="bank">Select the Blood bank:</label>
+<select id="blood bank">
+        <option value="select">select</option>
+        <option value="bank">District Hospital Blood Bank(U.P)</option>
+        <option value="bank">Military Hospital Blood Bank(U.P)</option>
+        <option value="bank">S N Medical College(U.P)</option>
+        <option value="bank">Medical College Blood Bank(U.P)</option>
+        <option value="bank">R.S. Gupta(IMA) Bood Bank(U.P)</option>
+        <option value="bank">DR. B.R. Ambedkar District Hospital Blood Bank(Etawah)</option>
+        <option value="bank">AIIMS(Delhi-NCR)</option>
+        <option value="bank">Red Cross society(Delhi)</option>
+        <option value="bank">Life Line Blood Bank(Bihar-Patna)</option>
+        <option value="bank">Patliputra Blood Bank(Bihar-Patna)</option>
+        <option value="bank">Grace Blood Bank(Karnataka)</option>
+        <option value="bank">BKF Voluntary Blood Bank(Karnataka)</option>
+        <option value="bank">Central Blood Bank(West Bengal)</option>
+        <option value="bank">Rotary Blood Bank(West Bengal)</option>
+        <option value="bank">Indian Red Cross Society(Tamil Nadu)</option>
+        <option value="bank">Jeevan Blood Bank(Tamil Nadu)</option>
+</select><br><br>
+
+   <input class="button button2" type="submit" value="Submit">
+   <input class="button button1" type="reset" value="Reset">
+
+</center>
+</fieldset>
+</form>
+
+</body>
+</html>
